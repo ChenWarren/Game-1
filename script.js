@@ -11,18 +11,17 @@ const numberOfEnemies = 10;
 let enemiesArray = [];
 
 class Enemy {
-  constructor(width, height, xSpeed, ySpeed){
+  constructor(width, height){
     this.x = Math.random() * CANVAS_WIDTH;
     this.y = Math.random() * CANVAS_HEIGHT;
     this.width = width;
     this.height = height;
-    this.xSpeed = xSpeed;
-    this.ySpeed = ySpeed; 
+    this.speed = Math.random() * 4 - 2;
   }
 
   update(){
-    this.x+= this.xSpeed;
-    this.y+= this.ySpeed;
+    this.x+= this.speed;
+    this.y+= this.speed;
   }
 
   draw(){
@@ -31,14 +30,14 @@ class Enemy {
 }
 
 for(let i=0; i<numberOfEnemies; i++){
-  enemiesArray.push(new Enemy(50, 50, Math.random()*5, Math.random()*5));
+  enemiesArray.push(new Enemy(50, 50));
 }
 
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   enemiesArray.forEach(enemy => {
-    enemy.update();
     enemy.draw();
+    enemy.update();
   })
   requestAnimationFrame(animate);
 }
