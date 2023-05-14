@@ -5,8 +5,8 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
-CANVAS_HEIGHT = canvas.height = 1000;
-CANVAS_WIDTH = canvas.width = 500;
+const CANVAS_HEIGHT = canvas.height = 1000;
+const CANVAS_WIDTH = canvas.width = 500;
 const numberOfEnemies = 2;
 let enemiesArray = [];
 let gameFrame = 0;
