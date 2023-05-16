@@ -8,11 +8,16 @@
   width: 500px;
 }
 #canvas2 {
-  border: 2px solid black;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 600px;
   width: 600px;
+}
+.dropdown {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
 }
